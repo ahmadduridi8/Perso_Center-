@@ -1,0 +1,48 @@
+
+
+.perso-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: top;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+  .perso-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .perso-table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .perso-table th, .perso-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .perso-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .perso-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .perso-table input[type="checkbox"] {
+    transform: scale(1.2);
+  }
+  
