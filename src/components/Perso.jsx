@@ -10,6 +10,8 @@ export default function Perso() {
     { id: 3, name: 'File3' }
   ]);
   const [selectedFiles, setSelectedFiles] = useState([]);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
     const email = localStorage.getItem('email');
@@ -19,11 +21,27 @@ export default function Perso() {
   }, [navigate]);
 
   const handleSelectFile = (fileId) => {
+    let updatedSelectedFiles;
+
     if (selectedFiles.includes(fileId)) {
-      setSelectedFiles(selectedFiles.filter(id => id !== fileId));
+      updatedSelectedFiles = selectedFiles.filter(id => id !== fileId);
     } else {
-      setSelectedFiles([...selectedFiles, fileId]);
+      updatedSelectedFiles = [...selectedFiles, fileId];
     }
+
+    setSelectedFiles(updatedSelectedFiles);
+
+    if (updatedSelectedFiles.length === 0) {
+      setIsSuccess(false);
+    }
+  };
+
+  const handleProcess = () => {
+    setIsProcessing(true);
+    setTimeout(() => {
+      setIsProcessing(false);
+      setIsSuccess(true);
+    }, 2000); 
   };
 
   return (
@@ -53,6 +71,15 @@ export default function Perso() {
           ))}
         </tbody>
       </table>
+
+      {selectedFiles.length > 0 && (
+        <button onClick={handleProcess} disabled={isProcessing} className="process-button">
+          {isProcessing ? 'Processing...' : 'Process'}
+        </button>
+      )}
+
+    
+      {isSuccess && <p className="success-message">Files processed successfully!</p>}
     </div>
   );
 }

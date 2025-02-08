@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import avatar from '../images/avatar.jpg';
-
+import './Navbar.css';
 export default function NavBar() {
   const navigate = useNavigate();
   const username = localStorage.getItem('email'); 
@@ -12,7 +12,7 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg ">
       <div className="container-fluid">
        
         <a className="navbar-brand" href="#">Perso Center</a>
