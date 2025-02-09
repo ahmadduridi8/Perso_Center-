@@ -1,5 +1,5 @@
 .login-container {
-  background: linear-gradient(45deg, #8d8a91, #3552ba);
+  background: linear-gradient(45deg, #8d8a91, #3b48c0c9);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -7,7 +7,7 @@
 }
 
 .login-box {
-  background:  linear-gradient(120deg, #f6d365 0%, #fda085 100%);;
+  background:  linear-gradient(120deg, #f6d465c4 0%, #fd9f85e0 100%);;
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
